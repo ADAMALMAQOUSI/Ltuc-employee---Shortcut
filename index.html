@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTUC Employee Management System</title>
+    <meta name="description" content="Modern employee management system for LTUC with full CRUD operations">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <main class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="title-icon">👥</span>
+                LTUC Employee Management
+            </h1>
+            <p class="subtitle">Manage your team with ease</p>
+        </header>
+
+        <section class="form-section glass-card">
+            <h2 class="section-title" id="form-title">Add New Employee</h2>
+            <form id="employee-form" class="employee-form">
+                <div class="form-group">
+                    <label for="employee-id" class="form-label">Employee ID</label>
+                    <input 
+                        type="text" 
+                        id="employee-id" 
+                        name="employeeId" 
+                        class="form-input" 
+                        placeholder="e.g., EMP001"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="employee-name" class="form-label">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="employee-name" 
+                        name="employeeName" 
+                        class="form-input" 
+                        placeholder="e.g., John Doe"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="employee-address" class="form-label">Address</label>
+                    <textarea 
+                        id="employee-address" 
+                        name="employeeAddress" 
+                        class="form-input form-textarea" 
+                        placeholder="e.g., 123 Main St, Amman, Jordan"
+                        rows="3"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn" class="btn btn-primary">
+                        <span class="btn-icon">➕</span>
+                        Add Employee
+                    </button>
+                    <button type="button" id="cancel-btn" class="btn btn-secondary" style="display: none;">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="table-section glass-card">
+            <div class="section-header">
+                <h2 class="section-title">Employee Directory</h2>
+                <span id="employee-count" class="employee-count">0 Employees</span>
+            </div>
+            
+            <div class="table-wrapper">
+                <table id="employee-table" class="employee-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employee-table-body">
+                        <tr class="empty-state">
+                            <td colspan="4">
+                                <div class="empty-message">
+                                    <span class="empty-icon">📋</span>
+                                    <p>No employees added yet. Start by adding your first employee!</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
